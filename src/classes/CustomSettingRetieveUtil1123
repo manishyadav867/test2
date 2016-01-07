@@ -1,0 +1,21 @@
+public with sharing class CustomSettingRetieveUtil1123 {
+	public static List<WS_CustomSettingRetrieve.customSettings> returnCustomSetting(List<String> customSettingNames){
+		
+		System.debug('CustomSettingRetieveUtil->returnCustomSetting'+customSettingNames);
+		Map<String, Schema.SObjectType> globalMap = Schema.getGlobalDescribe();
+		Map<String, Schema.SObjectField> fieldMap1;
+		Schema.DescribeFieldResult descField;
+		
+		if(!customSettingNames.isEmpty()){	
+			for(String csName : customSettingNames){	
+		 		fieldMap1 = GlobalMap.get(csName).getDescribe().fields.getMap();
+		 		for(Schema.SObjectField fieldMetadata : FieldMap.values()){
+		 			descField = fieldMetadata.getDescribe();
+		 			
+		 		}
+			}	
+		}		
+		
+		return null;	
+	}
+}
